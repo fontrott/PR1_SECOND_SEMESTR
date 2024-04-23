@@ -19,3 +19,4 @@ D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR1_SECOND_SEMESTR-main\PR1
 D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR1_SECOND_SEMESTR-main\PR1\obj\Debug\PR1.exe
 D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR1_SECOND_SEMESTR-main\PR1\obj\Debug\PR1.pdb
 D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR1_SECOND_SEMESTR-main\PR1\obj\Debug\PR1.Form2.resources
+D:\Users\1213-9\Documents\2-ИСП\Дисциплина\Фамилия\Лескив\PR1\obj\Debug\PR1.Form2.resources
