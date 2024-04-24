@@ -55,6 +55,7 @@
             this.label2.Size = new System.Drawing.Size(197, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Разработал: Лескив А.С.";
+            this.label2.Click += new System.EventHandler(this.authorName);
             // 
             // label3
             // 
@@ -65,6 +66,7 @@
             this.label3.Size = new System.Drawing.Size(506, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Специальность: Информационные системы и программирование";
+            this.label3.Click += new System.EventHandler(this.specialization);
             // 
             // linkLabel4
             // 
@@ -75,7 +77,7 @@
             this.linkLabel4.Size = new System.Drawing.Size(56, 20);
             this.linkLabel4.TabIndex = 3;
             this.linkLabel4.Text = "Email: ";
-            this.linkLabel4.Click += new System.EventHandler(this.label4_Click);
+            this.linkLabel4.Click += new System.EventHandler(this.email);
             // 
             // linkLabel1
             // 
@@ -87,7 +89,7 @@
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "andrejleskiv2006@gmail.com";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CommunicationWithSupportClick);
             // 
             // button1
             // 
@@ -97,7 +99,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.closeClick);
             // 
             // Form2
             // 
@@ -111,8 +113,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "О программе";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

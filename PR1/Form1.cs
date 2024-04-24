@@ -20,33 +20,34 @@ namespace PR1
         }
         public void Calculation()
         {
+            ErrorProvider errorProvider = new ErrorProvider();
             PrintService printService = new PrintService();
 
-            if (int.TryParse(input_Data.Text, out int papersToPrint))
+            if (string.IsNullOrEmpty(input_Data.Text))
             {
-                if (papersToPrint < 0 || papersToPrint == 0)
+                errorProvider.SetError(input_Data, "Поле не должно быть пустым");
+            }
+            else if (int.TryParse(input_Data.Text, out int papersToPrint))
+            {
+                if (papersToPrint <= 0)
                 {
-                    MessageBox.Show("Вы ввели отрицательное или число, равное нулю! Пожалуйста, введите положительное число.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorProvider.SetError(input_Data, "Введите положительное число больше нуля");
                 }
                 else
                 {
-                    double hours = printService.CalculatePrintingTime(papersToPrint);
-                    double cost = printService.CalculatePrintingCost(papersToPrint);
-                    result_1.Text = $"{hours} часов";
-                    result_2.Text = $"{cost} рублей";
+                    printService.setPapersToPrint(papersToPrint);
+                    double hours = printService.CalculatePrintingTime();
+                    double cost = printService.CalculatePrintingCost();
+                    result_1.Text = $"{hours}";
+                    result_2.Text = $"{cost}";
                 }
             }
             else
             {
-                MessageBox.Show("Вы ввели символ! Пожалуйста, введите число.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider.SetError(input_Data, "Введите целое число");
             }
         }
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
@@ -94,6 +95,8 @@ namespace PR1
         private void clear_Click(object sender, EventArgs e)
         {
             input_Data.Clear();
+            result_1.Clear();
+            result_2.Clear();
         }
 
         private void calculation_2(object sender, EventArgs e)

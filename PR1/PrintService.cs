@@ -9,20 +9,30 @@ namespace PR1
 {
     internal class PrintService
     {
-        private double papersPerHour = 500;
-        private int pricePerPaper = 12;
+         double PapersPerHour;
+         int PricePerPaper;
+         int PapersToPrint;
 
-        public double CalculatePrintingTime(int papersToPrint)
+        public PrintService()
         {
-            double hours = papersToPrint / papersPerHour;
+            PapersPerHour = 500;
+            PricePerPaper = 12;
+        }
+        public void setPapersToPrint(int papersToPrint)
+        {
+            this.PapersToPrint = papersToPrint;
+        }
+
+        public double CalculatePrintingTime()
+        {
+            double hours = PapersToPrint / PapersPerHour;
             return hours;
         }
 
-        public double CalculatePrintingCost(int papersToPrint)
+        public double CalculatePrintingCost()
         {
-            double cost = papersToPrint * pricePerPaper;
+            double cost = PapersToPrint * PricePerPaper;
             return cost;
-        }   
-
+        }
     }
 }

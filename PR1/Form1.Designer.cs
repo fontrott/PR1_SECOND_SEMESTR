@@ -60,6 +60,7 @@
             this.aboutTheProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Расчеты.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,6 +68,7 @@
             this.groupBox1.SuspendLayout();
             this.Файл.SuspendLayout();
             this.меню.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Расчеты
@@ -75,7 +77,7 @@
             this.Расчеты.Location = new System.Drawing.Point(0, 27);
             this.Расчеты.Name = "Расчеты";
             this.Расчеты.SelectedIndex = 0;
-            this.Расчеты.Size = new System.Drawing.Size(586, 422);
+            this.Расчеты.Size = new System.Drawing.Size(614, 422);
             this.Расчеты.TabIndex = 0;
             // 
             // tabPage1
@@ -85,7 +87,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(578, 396);
+            this.tabPage1.Size = new System.Drawing.Size(606, 396);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Расчеты";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,9 +100,9 @@
             this.groupBox3.Controls.Add(this.result_2);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.result_1);
-            this.groupBox3.Location = new System.Drawing.Point(300, 140);
+            this.groupBox3.Location = new System.Drawing.Point(314, 140);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(275, 250);
+            this.groupBox3.Size = new System.Drawing.Size(284, 250);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Результат:";
@@ -119,15 +121,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 74);
+            this.label6.Location = new System.Drawing.Point(17, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Цена:";
+            this.label6.Text = "Цена, ₽:";
             // 
             // result_2
             // 
-            this.result_2.Location = new System.Drawing.Point(114, 71);
+            this.result_2.Location = new System.Drawing.Point(126, 71);
             this.result_2.Name = "result_2";
             this.result_2.ReadOnly = true;
             this.result_2.Size = new System.Drawing.Size(125, 20);
@@ -137,15 +139,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 41);
+            this.label3.Location = new System.Drawing.Point(17, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Время печати:";
+            this.label3.Text = "Время печати, час:";
             // 
             // result_1
             // 
-            this.result_1.Location = new System.Drawing.Point(114, 37);
+            this.result_1.Location = new System.Drawing.Point(126, 37);
             this.result_1.Name = "result_1";
             this.result_1.ReadOnly = true;
             this.result_1.Size = new System.Drawing.Size(125, 20);
@@ -165,7 +167,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(3, 140);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(291, 250);
+            this.groupBox2.Size = new System.Drawing.Size(305, 250);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Исходные данные:";
@@ -194,7 +196,7 @@
             this.initial_Data_1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.initial_Data_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.initial_Data_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.initial_Data_1.Location = new System.Drawing.Point(190, 37);
+            this.initial_Data_1.Location = new System.Drawing.Point(190, 41);
             this.initial_Data_1.Name = "initial_Data_1";
             this.initial_Data_1.ReadOnly = true;
             this.initial_Data_1.Size = new System.Drawing.Size(95, 13);
@@ -251,17 +253,16 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 131);
+            this.groupBox1.Size = new System.Drawing.Size(607, 131);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(7, 39);
+            this.label1.Location = new System.Drawing.Point(22, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(555, 34);
             this.label1.TabIndex = 0;
@@ -298,7 +299,7 @@
             this.reference});
             this.меню.Location = new System.Drawing.Point(0, 0);
             this.меню.Name = "меню";
-            this.меню.Size = new System.Drawing.Size(586, 24);
+            this.меню.Size = new System.Drawing.Size(614, 24);
             this.меню.TabIndex = 2;
             this.меню.Text = "menuStrip1";
             // 
@@ -359,15 +360,19 @@
             // 
             this.aboutTheProgram.BackColor = System.Drawing.Color.Ivory;
             this.aboutTheProgram.Name = "aboutTheProgram";
-            this.aboutTheProgram.Size = new System.Drawing.Size(180, 22);
+            this.aboutTheProgram.Size = new System.Drawing.Size(149, 22);
             this.aboutTheProgram.Text = "О программе";
             this.aboutTheProgram.Click += new System.EventHandler(this.aboutTheProgramClick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 452);
+            this.ClientSize = new System.Drawing.Size(614, 452);
             this.Controls.Add(this.меню);
             this.Controls.Add(this.Расчеты);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -389,6 +394,7 @@
             this.Файл.ResumeLayout(false);
             this.меню.ResumeLayout(false);
             this.меню.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +433,7 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox initial_Data_2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
