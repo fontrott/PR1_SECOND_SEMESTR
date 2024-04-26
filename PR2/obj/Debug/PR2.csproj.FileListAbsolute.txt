@@ -9,3 +9,14 @@ D:\Users\1213-9\Documents\2-ИСП\Дисциплина\Фамилия\Леск�
 D:\Users\1213-9\Documents\2-ИСП\Дисциплина\Фамилия\Лескив\PR2\obj\Debug\PR2.exe
 D:\Users\1213-9\Documents\2-ИСП\Дисциплина\Фамилия\Лескив\PR2\obj\Debug\PR2.pdb
 D:\Users\1213-9\Documents\2-ИСП\Дисциплина\Фамилия\Лескив\PR2\obj\Debug\PR2.Form2.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\bin\Debug\PR2.exe.config
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\bin\Debug\PR2.exe
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\bin\Debug\PR2.pdb
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.csproj.AssemblyReference.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.Form1.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.Form2.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.Properties.Resources.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.csproj.GenerateResource.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.csproj.CoreCompileInputs.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.exe
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR2\obj\Debug\PR2.pdb

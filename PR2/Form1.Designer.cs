@@ -37,24 +37,25 @@
             this.aboutTheProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.меню = new System.Windows.Forms.MenuStrip();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.close_1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.result_1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.calculation_button_1 = new System.Windows.Forms.Button();
+            this.input_Data = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.input_Data = new System.Windows.Forms.TextBox();
-            this.calculation_button_1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.result_1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.close_1 = new System.Windows.Forms.Button();
             this.Расчеты = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.меню.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.Расчеты.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +75,14 @@
             this.calculate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.calculation_button_2});
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(180, 22);
+            this.calculate.Size = new System.Drawing.Size(135, 22);
             this.calculate.Text = "Вычислить";
             // 
             // calculation_button_2
             // 
             this.calculation_button_2.BackColor = System.Drawing.Color.Linen;
             this.calculation_button_2.Name = "calculation_button_2";
-            this.calculation_button_2.Size = new System.Drawing.Size(180, 22);
+            this.calculation_button_2.Size = new System.Drawing.Size(160, 22);
             this.calculation_button_2.Text = "Найти элемент!";
             this.calculation_button_2.Click += new System.EventHandler(this.calculation_button_2_Click);
             // 
@@ -89,7 +90,7 @@
             // 
             this.clear.BackColor = System.Drawing.Color.Linen;
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(180, 22);
+            this.clear.Size = new System.Drawing.Size(135, 22);
             this.clear.Text = "Очистить";
             this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
@@ -97,7 +98,7 @@
             // 
             this.close_2.BackColor = System.Drawing.Color.Linen;
             this.close_2.Name = "close_2";
-            this.close_2.Size = new System.Drawing.Size(180, 22);
+            this.close_2.Size = new System.Drawing.Size(135, 22);
             this.close_2.Text = "Выход";
             this.close_2.Click += new System.EventHandler(this.close_2_Click);
             // 
@@ -113,7 +114,7 @@
             // 
             this.aboutTheProgram.BackColor = System.Drawing.Color.Linen;
             this.aboutTheProgram.Name = "aboutTheProgram";
-            this.aboutTheProgram.Size = new System.Drawing.Size(180, 22);
+            this.aboutTheProgram.Size = new System.Drawing.Size(149, 22);
             this.aboutTheProgram.Text = "О программе";
             this.aboutTheProgram.Click += new System.EventHandler(this.aboutTheProgram_Click);
             // 
@@ -141,6 +142,109 @@
             this.tabPage1.Text = "Расчеты";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox3.Controls.Add(this.close_1);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.result_1);
+            this.groupBox3.Location = new System.Drawing.Point(257, 81);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(248, 266);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Результат:";
+            // 
+            // close_1
+            // 
+            this.close_1.BackColor = System.Drawing.Color.Lavender;
+            this.close_1.Location = new System.Drawing.Point(52, 213);
+            this.close_1.Name = "close_1";
+            this.close_1.Size = new System.Drawing.Size(148, 26);
+            this.close_1.TabIndex = 8;
+            this.close_1.Text = "Выход";
+            this.close_1.UseVisualStyleBackColor = false;
+            this.close_1.Click += new System.EventHandler(this.close_1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Элемент списка, который в искали:";
+            // 
+            // result_1
+            // 
+            this.result_1.Location = new System.Drawing.Point(31, 64);
+            this.result_1.Name = "result_1";
+            this.result_1.ReadOnly = true;
+            this.result_1.Size = new System.Drawing.Size(187, 20);
+            this.result_1.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox2.Controls.Add(this.calculation_button_1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.input_Data);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox2.Location = new System.Drawing.Point(3, 81);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(248, 266);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Исходные данные:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 131);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Введите номер элемента списка:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(39, 147);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // calculation_button_1
+            // 
+            this.calculation_button_1.BackColor = System.Drawing.Color.Lavender;
+            this.calculation_button_1.Location = new System.Drawing.Point(55, 213);
+            this.calculation_button_1.Name = "calculation_button_1";
+            this.calculation_button_1.Size = new System.Drawing.Size(148, 26);
+            this.calculation_button_1.TabIndex = 7;
+            this.calculation_button_1.Text = "Найти элемент!";
+            this.calculation_button_1.UseVisualStyleBackColor = false;
+            this.calculation_button_1.Click += new System.EventHandler(this.calculation_button_1_Click);
+            // 
+            // input_Data
+            // 
+            this.input_Data.Location = new System.Drawing.Point(39, 64);
+            this.input_Data.Name = "input_Data";
+            this.input_Data.Size = new System.Drawing.Size(175, 20);
+            this.input_Data.TabIndex = 7;
+            this.input_Data.TextChanged += new System.EventHandler(this.input_Data_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(78, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Элементы списка:";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Linen;
@@ -164,108 +268,6 @@
             this.label1.Text = "                                             Здравствуйте! \r\n  В этой программе в" +
     "ы можете найти n-ый элемент списка с конца\r\n";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.calculation_button_1);
-            this.groupBox2.Controls.Add(this.input_Data);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox2.Location = new System.Drawing.Point(3, 81);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 266);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Исходные данные:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Элементы списка:";
-            // 
-            // input_Data
-            // 
-            this.input_Data.Location = new System.Drawing.Point(27, 64);
-            this.input_Data.Name = "input_Data";
-            this.input_Data.ReadOnly = true;
-            this.input_Data.Size = new System.Drawing.Size(175, 20);
-            this.input_Data.TabIndex = 7;
-            this.input_Data.Text = "\r\np, r, o, g, r, a, m, m, i, n, g";
-            // 
-            // calculation_button_1
-            // 
-            this.calculation_button_1.BackColor = System.Drawing.Color.Lavender;
-            this.calculation_button_1.Location = new System.Drawing.Point(50, 213);
-            this.calculation_button_1.Name = "calculation_button_1";
-            this.calculation_button_1.Size = new System.Drawing.Size(148, 26);
-            this.calculation_button_1.TabIndex = 7;
-            this.calculation_button_1.Text = "Найти элемент!";
-            this.calculation_button_1.UseVisualStyleBackColor = false;
-            this.calculation_button_1.Click += new System.EventHandler(this.calculation_button_1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(27, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Введите номер элемента списка:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox3.Controls.Add(this.close_1);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.result_1);
-            this.groupBox3.Location = new System.Drawing.Point(257, 81);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(248, 266);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Результат:";
-            // 
-            // result_1
-            // 
-            this.result_1.Location = new System.Drawing.Point(31, 64);
-            this.result_1.Name = "result_1";
-            this.result_1.ReadOnly = true;
-            this.result_1.Size = new System.Drawing.Size(187, 20);
-            this.result_1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Элемент списка, который в искали:";
-            // 
-            // close_1
-            // 
-            this.close_1.BackColor = System.Drawing.Color.Lavender;
-            this.close_1.Location = new System.Drawing.Point(52, 213);
-            this.close_1.Name = "close_1";
-            this.close_1.Size = new System.Drawing.Size(148, 26);
-            this.close_1.TabIndex = 8;
-            this.close_1.Text = "Выход";
-            this.close_1.UseVisualStyleBackColor = false;
-            this.close_1.Click += new System.EventHandler(this.close_1_Click);
-            // 
             // Расчеты
             // 
             this.Расчеты.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -278,6 +280,17 @@
             this.Расчеты.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Расчеты.TabIndex = 3;
             this.Расчеты.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Lavender;
+            this.button1.Location = new System.Drawing.Point(55, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 26);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Добавить!";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -295,12 +308,12 @@
             this.меню.ResumeLayout(false);
             this.меню.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.Расчеты.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,6 +343,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl Расчеты;
+        private System.Windows.Forms.Button button1;
     }
 }
 
