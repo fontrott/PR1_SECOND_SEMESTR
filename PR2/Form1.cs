@@ -121,10 +121,12 @@ namespace PR2
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string symbols = input_Data.Text;
             if (!string.IsNullOrEmpty(input_Data.Text))
             {
-                string list = input_Data.Text;
-                lists.Add(list);
+                lists.Add(symbols);
                 input_Data.Clear();
             }
             else
@@ -134,6 +136,27 @@ namespace PR2
                 await Task.Delay(2000);
                 errorProvider1.SetError(input_Data, "");
             }
+            string symbols1 = String.Join(", ", lists.Select(n => n.ToString()));
+            ReadyList.Text = symbols1;
+            }
+            catch (FormatException fe)
+            {
+                MessageBox.Show("Введено неправильно, вводите по 1 значению. " + fe.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Упс... что-то пошло не так " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBox_ReadyList(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

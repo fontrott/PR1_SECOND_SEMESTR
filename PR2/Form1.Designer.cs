@@ -42,15 +42,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.result_1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ReadyList = new System.Windows.Forms.TextBox();
             this.calculation_button_1 = new System.Windows.Forms.Button();
-            this.input_Data = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.input_Data = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Расчеты = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.меню.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -137,7 +139,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(508, 377);
+            this.tabPage1.Size = new System.Drawing.Size(508, 410);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Расчеты";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -150,7 +152,7 @@
             this.groupBox3.Controls.Add(this.result_1);
             this.groupBox3.Location = new System.Drawing.Point(257, 81);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(248, 266);
+            this.groupBox3.Size = new System.Drawing.Size(248, 329);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Результат:";
@@ -158,7 +160,7 @@
             // close_1
             // 
             this.close_1.BackColor = System.Drawing.Color.Lavender;
-            this.close_1.Location = new System.Drawing.Point(52, 213);
+            this.close_1.Location = new System.Drawing.Point(48, 277);
             this.close_1.Name = "close_1";
             this.close_1.Size = new System.Drawing.Size(148, 26);
             this.close_1.TabIndex = 8;
@@ -186,6 +188,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.ReadyList);
             this.groupBox2.Controls.Add(this.calculation_button_1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.button1);
@@ -195,46 +199,39 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(3, 81);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 266);
+            this.groupBox2.Size = new System.Drawing.Size(248, 329);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Исходные данные:";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // label5
+            // label4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Введите номер элемента списка:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(100, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Список:";
             // 
-            // textBox1
+            // ReadyList
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.ReadyList.Location = new System.Drawing.Point(39, 156);
+            this.ReadyList.Name = "ReadyList";
+            this.ReadyList.Size = new System.Drawing.Size(175, 20);
+            this.ReadyList.TabIndex = 12;
+            this.ReadyList.TextChanged += new System.EventHandler(this.textBox_ReadyList);
             // 
             // calculation_button_1
             // 
             this.calculation_button_1.BackColor = System.Drawing.Color.Lavender;
-            this.calculation_button_1.Location = new System.Drawing.Point(55, 213);
+            this.calculation_button_1.Location = new System.Drawing.Point(55, 277);
             this.calculation_button_1.Name = "calculation_button_1";
             this.calculation_button_1.Size = new System.Drawing.Size(148, 26);
             this.calculation_button_1.TabIndex = 7;
             this.calculation_button_1.Text = "Найти элемент!";
             this.calculation_button_1.UseVisualStyleBackColor = false;
             this.calculation_button_1.Click += new System.EventHandler(this.calculation_button_1_Click);
-            // 
-            // input_Data
-            // 
-            this.input_Data.Location = new System.Drawing.Point(39, 64);
-            this.input_Data.Name = "input_Data";
-            this.input_Data.Size = new System.Drawing.Size(175, 20);
-            this.input_Data.TabIndex = 7;
-            this.input_Data.TextChanged += new System.EventHandler(this.input_Data_TextChanged);
             // 
             // label2
             // 
@@ -244,6 +241,42 @@
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Элементы списка:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Lavender;
+            this.button1.Location = new System.Drawing.Point(55, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 26);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Добавить!";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Введите номер элемента списка:";
+            // 
+            // input_Data
+            // 
+            this.input_Data.Location = new System.Drawing.Point(39, 64);
+            this.input_Data.Name = "input_Data";
+            this.input_Data.Size = new System.Drawing.Size(175, 20);
+            this.input_Data.TabIndex = 7;
+            this.input_Data.TextChanged += new System.EventHandler(this.input_Data_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(39, 214);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox1
             // 
@@ -276,27 +309,16 @@
             this.Расчеты.Location = new System.Drawing.Point(0, 28);
             this.Расчеты.Name = "Расчеты";
             this.Расчеты.SelectedIndex = 0;
-            this.Расчеты.Size = new System.Drawing.Size(516, 386);
+            this.Расчеты.Size = new System.Drawing.Size(516, 419);
             this.Расчеты.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Расчеты.TabIndex = 3;
             this.Расчеты.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Lavender;
-            this.button1.Location = new System.Drawing.Point(55, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 26);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Добавить!";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 385);
+            this.ClientSize = new System.Drawing.Size(516, 448);
             this.Controls.Add(this.меню);
             this.Controls.Add(this.Расчеты);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -344,6 +366,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl Расчеты;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox ReadyList;
+        private System.Windows.Forms.Label label4;
     }
 }
 
