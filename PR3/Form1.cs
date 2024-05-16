@@ -71,6 +71,28 @@ namespace PR3
             }
             return score;
         }
+        private bool WordHaveEnglishLetters(string word)
+        {
+            foreach (char c in word.ToUpper())
+            {
+                if (c >= 'A' && c <= 'Z')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool WordHaveRussianLetters(string word)
+        {
+            foreach (char c in word.ToUpper())
+            {
+                if (c >= 'А' && c <= 'Я')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public async void Calculate()
         {
             try
@@ -82,16 +104,27 @@ namespace PR3
                     await Task.Delay(2000);
                     errorProvider.SetError(input_Data1, "");
                 }
-                else
-                if (string.IsNullOrEmpty(input_Data1.Text))
+                else if (string.IsNullOrEmpty(inputString))
                 {
                     errorProvider.SetError(input_Data1, "Поле не должно быть пустым!");
                     await Task.Delay(2000);
                     errorProvider.SetError(input_Data1, "");
                 }
+                else if (selectedLanguage == "Английский" && WordHaveRussianLetters(inputString))
+                {
+                    errorProvider.SetError(input_Data1, "Слово не должно содержать русские буквы!");
+                    await Task.Delay(2000);
+                    errorProvider.SetError(input_Data1, "");
+                }
+                else if (selectedLanguage == "Русский" && WordHaveEnglishLetters(inputString))
+                {
+                    errorProvider.SetError(input_Data1, "Слово не должно содержать английские буквы!");
+                    await Task.Delay(2000);
+                    errorProvider.SetError(input_Data1, "");
+                }
                 else
                 {
-                    string word = input_Data1.Text.ToUpper();
+                    string word = inputString.ToUpper();
                     int score = CalculateScore(word, languages[selectedLanguage]);
                     result_1.Text = $"{score}";
                 }
@@ -145,11 +178,6 @@ namespace PR3
         private void calculation_button_1_Click(object sender, EventArgs e)
         {
             Calculate();
-        }
-
-        private void input_Data1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

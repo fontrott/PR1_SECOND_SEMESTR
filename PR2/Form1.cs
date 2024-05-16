@@ -24,6 +24,7 @@ namespace PR2
             {
 
                 lists.Reverse();
+                
                 if (string.IsNullOrEmpty(textBox1.Text))
                 {
                     errorProvider1.SetError(textBox1, "Поле не должно быть пустым!");
@@ -54,27 +55,7 @@ namespace PR2
                 lists.Reverse();
             }
             catch (FormatException ex) { MessageBox.Show(ex.Message); }
-            //List<string> list = new List<string>();
-
-            //list.Reverse();
-
-            //if (int.TryParse(textBox1.Text, out int selectedIndex))
-            //{
-            //    int index = selectedIndex - 1;
-            //    if (index >= 0 && index < list.Count)
-            //    {
-            //        string selectedElement = list[index];
-            //        result_1.Text = selectedElement;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Индекс выходит за пределы списка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Некорректный ввод!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            
         }
 
         private void calculation_button_1_Click(object sender, EventArgs e)
@@ -108,36 +89,32 @@ namespace PR2
             Form2 newF = new Form2();
             newF.Show();
         }
-
-        private void input_Data_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private async void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 string symbols = input_Data.Text;
-            if (!string.IsNullOrEmpty(input_Data.Text))
-            {
-                lists.Add(symbols);
-                input_Data.Clear();
-            }
-            else
-            {
-                ErrorProvider errorProvider1 = new ErrorProvider();
-                errorProvider1.SetError(input_Data, "Строка пустая");
-                await Task.Delay(2000);
-                errorProvider1.SetError(input_Data, "");
-            }
-            string symbols1 = String.Join(", ", lists.Select(n => n.ToString()));
-            ReadyList.Text = symbols1;
+                if (!string.IsNullOrEmpty(symbols))
+                {
+                    string[] words = symbols.Split(new char[] { ' ' });
+
+                    foreach (string word in words)
+                    {
+                        lists.Add(word);
+                    }
+
+                    input_Data.Clear();
+                }
+                else
+                {
+                    ErrorProvider errorProvider1 = new ErrorProvider();
+                    errorProvider1.SetError(input_Data, "Строка пустая");
+                    await Task.Delay(2000);
+                    errorProvider1.SetError(input_Data, "");
+                }
+
+                string symbols1 = String.Join(", ", lists.Select(n => n.ToString()));
+                ReadyList.Text = symbols1;
             }
             catch (FormatException fe)
             {
@@ -149,12 +126,12 @@ namespace PR2
             }
         }
 
-        private void textBox_ReadyList(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором форм Windows
+            #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
         /// Требуемый метод для поддержки конструктора — не изменяйте 
@@ -199,7 +199,6 @@
             this.input_Data1.Name = "input_Data1";
             this.input_Data1.Size = new System.Drawing.Size(175, 20);
             this.input_Data1.TabIndex = 9;
-            this.input_Data1.TextChanged += new System.EventHandler(this.input_Data1_TextChanged);
             // 
             // groupBox1
             // 
@@ -252,7 +251,7 @@
             this.calculate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.calculation_button_2});
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(135, 22);
+            this.calculate.Size = new System.Drawing.Size(180, 22);
             this.calculate.Text = "Вычислить";
             // 
             // calculation_button_2
@@ -267,7 +266,7 @@
             // 
             this.clear.BackColor = System.Drawing.Color.Cornsilk;
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(135, 22);
+            this.clear.Size = new System.Drawing.Size(180, 22);
             this.clear.Text = "Очистить";
             this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
@@ -275,7 +274,7 @@
             // 
             this.close_2.BackColor = System.Drawing.Color.Cornsilk;
             this.close_2.Name = "close_2";
-            this.close_2.Size = new System.Drawing.Size(135, 22);
+            this.close_2.Size = new System.Drawing.Size(180, 22);
             this.close_2.Text = "Выход";
             this.close_2.Click += new System.EventHandler(this.close_2_Click);
             // 
@@ -291,7 +290,7 @@
             // 
             this.aboutTheProgram.BackColor = System.Drawing.Color.Cornsilk;
             this.aboutTheProgram.Name = "aboutTheProgram";
-            this.aboutTheProgram.Size = new System.Drawing.Size(149, 22);
+            this.aboutTheProgram.Size = new System.Drawing.Size(180, 22);
             this.aboutTheProgram.Text = "О программе";
             this.aboutTheProgram.Click += new System.EventHandler(this.aboutTheProgram_Click);
             // 
