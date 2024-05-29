@@ -6,11 +6,17 @@ using System.Windows.Forms;
 
 namespace PR4
 {
-    class Program
+    internal static class Program
     {
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// </summary>
+        [STAThread]
         static void Main()
         {
-            Application.Run(new MainForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Buses());
         }
     }
 }
