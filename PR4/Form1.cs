@@ -12,78 +12,33 @@ namespace PR4
 {
     public partial class Form1 : Form
     {
-        private List<BusInfo> busList;
         public Form1()
         {
             InitializeComponent();
         }
-        private void InitBusList()
+
+        private void button_Russian_Select_Click(object sender, EventArgs e)
         {
-            busList = new List<BusInfo>
-        {
-             new BusInfo(Convert.ToInt32(txtBusNumber.Text), txtDriverName.Text, txtRouteNumber.Text, radioBtnOnRoute.Text)
-        };
-        }
-        private void btnAddBus_Click(object sender, EventArgs e)
-        {
-        }
-        private void UpdateBusLocation(int busNumber, bool isOnRoute)
-        {
-            BusInfo busToUpdate = busList.Find(bus => bus.BusNumber == busNumber);
-            if (busToUpdate != null)
+            int busNumber = Convert.ToInt32(txtBusNumber.Text);
+            string driverName = txtDriverName.Text;
+            string routeNumber = txtRouteNumber.Text;
+            bool isOnRoute = chkIsOnRoute1.Checked;
+
+            Bus bus = new Bus(busNumber, driverName, routeNumber)
             {
-                busToUpdate.IsOnRoute = isOnRoute;
-                MessageBox.Show($"Информация об автобусе номер {busNumber} обновлена.");
-            }
-            else
-            {
-                MessageBox.Show($"Автобус с номером {busNumber} не найден.");
-            }
-        }
-        private List<BusInfo> GetBusesByLocation(bool isOnRoute)
-        {
-            return busList.FindAll(bus => bus.IsOnRoute == isOnRoute);
-        }
+                BusNumber = busNumber,
+                DriverName = driverName,
+                RouteNumber = routeNumber,
+            };
 
-        private void btnBusOnRoute_Click(object sender, EventArgs e)
-        {
-            int busNumber = int.Parse(txtBusNumber.Text);
-            UpdateBusLocation(busNumber, true);
-        }
+            BusPark busPark = new BusPark();
+                busPark.AddBus(bus);
 
-        private void btnBusInPark_Click(object sender, EventArgs e)
-        {
-            int busNumber = int.Parse(txtBusNumber.Text);
-            UpdateBusLocation(busNumber, false);
-        }
-
-        private void btnGetBusesInPark_Click(object sender, EventArgs e)
-        {
-            var busesInPark = GetBusesByLocation(false);
-            DisplayBusInfo(busesInPark);
-        }
-
-        private void btnGetBusesOnRoute_Click(object sender, EventArgs e)
-        {
-            var busesOnRoute = GetBusesByLocation(true);
-            DisplayBusInfo(busesOnRoute);
-        }
-
-        private void DisplayBusInfo(List<BusInfo> buses)
-        {
-            if (buses.Count > 0)
-            {
-                string busInfo = "Список автобусов:\n";
-                foreach (var bus in buses)
-                {
-                    busInfo += $"Номер: {bus.BusNumber}, Водитель: {bus.DriverName}, Маршрут: {bus.RouteNumber}\n";
-                }
-                MessageBox.Show(busInfo);
-            }
-            else
-            {
-                MessageBox.Show("Нет информации об автобусах.");
-            }
+            // Очистка полей ввода после добавления автобуса
+            txtBusNumber.Text = "";
+            txtDriverName.Text = "";
+            txtRouteNumber.Text = "";
+            chkIsOnRoute1.Checked = false;
         }
     }
 }

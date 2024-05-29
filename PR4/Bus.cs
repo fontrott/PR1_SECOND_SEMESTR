@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PR4
 {
-    using System;
-    using System.Collections.Generic;
-
-    using System;
-    using System.Collections.Generic;
-
-    internal class BusInfo
+    internal class Bus
     {
-        public int BusNumber { get; set; }
-        public string DriverName { get; set; }
-        public string RouteNumber { get; set; }
-        public bool IsOnRoute { get; set; }
+        private ListBox busListBox;
 
-        public BusInfo(int BusNumber, string DriverName, string RouteNumber, bool IsOnRoute)
+        public Bus(ListBox listBox)
         {
-            this.BusNumber = BusNumber;
-            this.DriverName = DriverName;
-            this.RouteNumber = RouteNumber;
-            this.IsOnRoute = IsOnRoute;
+            busListBox = listBox;
+        }
+
+        public void AddBusToPark(string busNumberInput, string driverNameInput, string routeNumber, bool isOnRoute)
+        {
+            int busNumber = Convert.ToInt32(busNumberInput);
+
+            Bus newBus = new Bus(busNumber, driverNameInput, routeNumber, isOnRoute);
+
+            string busInfo = $"Bus Number: {newBus.BusNumber}, Driver Name: {newBus.DriverName}, Route: {newBus.RouteNumber}, On Route: {newBus.IsOnRoute}";
+
+            // Добавление информации об автобусе в ListBox
+            busListBox.Items.Add(busInfo);
         }
     }
 }

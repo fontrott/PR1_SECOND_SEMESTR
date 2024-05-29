@@ -36,14 +36,12 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.меню = new System.Windows.Forms.MenuStrip();
             this.reference = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioBtnOnRoute = new System.Windows.Forms.Button();
             this.button_Russian_Select = new System.Windows.Forms.Button();
-            this.calculation_button_1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkIsOnRoute1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDriverName = new System.Windows.Forms.TextBox();
@@ -51,10 +49,10 @@
             this.txtRouteNumber = new System.Windows.Forms.TextBox();
             this.close_1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.result_1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Расчеты = new System.Windows.Forms.TabControl();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.меню.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,44 +128,16 @@
             this.reference.Size = new System.Drawing.Size(65, 20);
             this.reference.Text = "Справка";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Выберите язык:";
-            // 
-            // radioBtnOnRoute
-            // 
-            this.radioBtnOnRoute.BackColor = System.Drawing.Color.Cornsilk;
-            this.radioBtnOnRoute.Location = new System.Drawing.Point(150, 200);
-            this.radioBtnOnRoute.Name = "radioBtnOnRoute";
-            this.radioBtnOnRoute.Size = new System.Drawing.Size(75, 23);
-            this.radioBtnOnRoute.TabIndex = 7;
-            this.radioBtnOnRoute.Text = "Английский\r\n\r\n";
-            this.radioBtnOnRoute.UseVisualStyleBackColor = false;
-            // 
             // button_Russian_Select
             // 
             this.button_Russian_Select.BackColor = System.Drawing.Color.Cornsilk;
-            this.button_Russian_Select.Location = new System.Drawing.Point(28, 200);
+            this.button_Russian_Select.Location = new System.Drawing.Point(50, 203);
             this.button_Russian_Select.Name = "button_Russian_Select";
-            this.button_Russian_Select.Size = new System.Drawing.Size(75, 23);
+            this.button_Russian_Select.Size = new System.Drawing.Size(116, 23);
             this.button_Russian_Select.TabIndex = 8;
-            this.button_Russian_Select.Text = "Русский";
+            this.button_Russian_Select.Text = "Добавить автобус";
             this.button_Russian_Select.UseVisualStyleBackColor = false;
-            // 
-            // calculation_button_1
-            // 
-            this.calculation_button_1.BackColor = System.Drawing.Color.Cornsilk;
-            this.calculation_button_1.Location = new System.Drawing.Point(50, 259);
-            this.calculation_button_1.Name = "calculation_button_1";
-            this.calculation_button_1.Size = new System.Drawing.Size(148, 26);
-            this.calculation_button_1.TabIndex = 7;
-            this.calculation_button_1.Text = "Подсчитать очки!";
-            this.calculation_button_1.UseVisualStyleBackColor = false;
+            this.button_Russian_Select.Click += new System.EventHandler(this.button_Russian_Select_Click);
             // 
             // label1
             // 
@@ -196,7 +166,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 30);
+            this.label5.Location = new System.Drawing.Point(13, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 13);
             this.label5.TabIndex = 10;
@@ -205,16 +175,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.LightGreen;
+            this.groupBox2.Controls.Add(this.chkIsOnRoute1);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtDriverName);
             this.groupBox2.Controls.Add(this.txtBusNumber);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.calculation_button_1);
             this.groupBox2.Controls.Add(this.txtRouteNumber);
             this.groupBox2.Controls.Add(this.button_Russian_Select);
-            this.groupBox2.Controls.Add(this.radioBtnOnRoute);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(3, 96);
             this.groupBox2.Name = "groupBox2";
@@ -223,10 +191,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Исходные данные:";
             // 
+            // chkIsOnRoute1
+            // 
+            this.chkIsOnRoute1.AutoSize = true;
+            this.chkIsOnRoute1.Location = new System.Drawing.Point(15, 151);
+            this.chkIsOnRoute1.Name = "chkIsOnRoute1";
+            this.chkIsOnRoute1.Size = new System.Drawing.Size(221, 17);
+            this.chkIsOnRoute1.TabIndex = 16;
+            this.chkIsOnRoute1.Text = "Автобус на маршруте (иначе - в парке)\r\n";
+            this.chkIsOnRoute1.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 108);
+            this.label6.Location = new System.Drawing.Point(13, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(189, 13);
             this.label6.TabIndex = 15;
@@ -235,29 +213,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 69);
+            this.label4.Location = new System.Drawing.Point(13, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 13);
+            this.label4.Size = new System.Drawing.Size(132, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Введите имя водителя:";
+            this.label4.Text = "Введите ФИО водителя:";
             // 
             // txtDriverName
             // 
-            this.txtDriverName.Location = new System.Drawing.Point(28, 85);
+            this.txtDriverName.Location = new System.Drawing.Point(16, 87);
             this.txtDriverName.Name = "txtDriverName";
             this.txtDriverName.Size = new System.Drawing.Size(197, 20);
             this.txtDriverName.TabIndex = 13;
             // 
             // txtBusNumber
             // 
-            this.txtBusNumber.Location = new System.Drawing.Point(28, 46);
+            this.txtBusNumber.Location = new System.Drawing.Point(16, 48);
             this.txtBusNumber.Name = "txtBusNumber";
             this.txtBusNumber.Size = new System.Drawing.Size(197, 20);
             this.txtBusNumber.TabIndex = 12;
             // 
             // txtRouteNumber
             // 
-            this.txtRouteNumber.Location = new System.Drawing.Point(28, 123);
+            this.txtRouteNumber.Location = new System.Drawing.Point(16, 125);
             this.txtRouteNumber.Name = "txtRouteNumber";
             this.txtRouteNumber.Size = new System.Drawing.Size(197, 20);
             this.txtRouteNumber.TabIndex = 9;
@@ -275,26 +253,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 30);
+            this.label3.Location = new System.Drawing.Point(15, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Подсчитанные очки:";
             // 
-            // result_1
-            // 
-            this.result_1.Location = new System.Drawing.Point(31, 55);
-            this.result_1.Name = "result_1";
-            this.result_1.ReadOnly = true;
-            this.result_1.Size = new System.Drawing.Size(187, 20);
-            this.result_1.TabIndex = 1;
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.LightGreen;
+            this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.Controls.Add(this.close_1);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.result_1);
             this.groupBox3.Location = new System.Drawing.Point(257, 96);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(248, 310);
@@ -326,6 +296,15 @@
             this.Расчеты.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.Расчеты.TabIndex = 7;
             this.Расчеты.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Enabled = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(18, 46);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(211, 186);
+            this.listBox1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -361,10 +340,7 @@
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.MenuStrip меню;
         private System.Windows.Forms.ToolStripMenuItem reference;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button radioBtnOnRoute;
         private System.Windows.Forms.Button button_Russian_Select;
-        private System.Windows.Forms.Button calculation_button_1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
@@ -372,7 +348,6 @@
         private System.Windows.Forms.TextBox txtRouteNumber;
         private System.Windows.Forms.Button close_1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox result_1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl Расчеты;
@@ -380,6 +355,8 @@
         private System.Windows.Forms.TextBox txtBusNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chkIsOnRoute1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
