@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PR4
 {
-    internal class Bus
+    public class Bus
     {
         private ListBox busListBox;
 
@@ -15,17 +15,25 @@ namespace PR4
         {
             busListBox = listBox;
         }
-
-        public void AddBusToPark(string busNumberInput, string driverNameInput, string routeNumber, bool isOnRoute)
+        public int BusNumber { get; set; }
+        public string DriverName { get; set; }
+        public string RouteNumber { get; set; }
+        public bool IsOnRoute { get; set; }
+        public Bus(int busNumber, string driverName, string routeNumber, bool isOnRoute)
         {
-            int busNumber = Convert.ToInt32(busNumberInput);
-
-            Bus newBus = new Bus(busNumber, driverNameInput, routeNumber, isOnRoute);
-
+            BusNumber = busNumber;
+            DriverName = driverName;
+            RouteNumber = routeNumber;
+            IsOnRoute = isOnRoute;
+            AddBusToPark();
+        }
+        public void AddBusToPark(int busNumberInput, string driverNameInput, string routeNumber, bool isOnRoute)
+        {
+            int busNumber = busNumberInput;
+            Bus newBus = new Bus(busNumberInput, driverNameInput, routeNumber, isOnRoute);
             string busInfo = $"Bus Number: {newBus.BusNumber}, Driver Name: {newBus.DriverName}, Route: {newBus.RouteNumber}, On Route: {newBus.IsOnRoute}";
-
-            // Добавление информации об автобусе в ListBox
             busListBox.Items.Add(busInfo);
+            busListBox.Text = busInfo;
         }
     }
 }
