@@ -1,0 +1,10 @@
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\bin\Debug\PR333333333.exe.config
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\bin\Debug\PR333333333.exe
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\bin\Debug\PR333333333.pdb
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.csproj.AssemblyReference.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.Form1.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.Properties.Resources.resources
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.csproj.GenerateResource.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.csproj.CoreCompileInputs.cache
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.exe
+D:\ПРОГРАММИРОВАНИЕ 2 СЕМЕСТР\PR333333333\obj\Debug\PR333333333.pdb
