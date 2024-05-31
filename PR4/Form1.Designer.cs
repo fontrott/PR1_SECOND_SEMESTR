@@ -40,6 +40,7 @@
             this.btn_Close1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chk_OnTheRoute = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_RouteNumber = new System.Windows.Forms.TextBox();
@@ -58,14 +59,13 @@
             this.btn_Close2 = new System.Windows.Forms.ToolStripMenuItem();
             this.reference = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTheProgram = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.меню.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -173,7 +173,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 40);
+            this.label4.Location = new System.Drawing.Point(19, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 4;
@@ -199,14 +199,24 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Исходные данные:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 237);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(247, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // chk_OnTheRoute
             // 
             this.chk_OnTheRoute.AutoSize = true;
             this.chk_OnTheRoute.Location = new System.Drawing.Point(39, 189);
             this.chk_OnTheRoute.Name = "chk_OnTheRoute";
-            this.chk_OnTheRoute.Size = new System.Drawing.Size(221, 17);
+            this.chk_OnTheRoute.Size = new System.Drawing.Size(227, 17);
             this.chk_OnTheRoute.TabIndex = 9;
-            this.chk_OnTheRoute.Text = "Автобус на маршруте ( иначе в парке )";
+            this.chk_OnTheRoute.Text = "Автобус на маршруте ( иначе - в парке )";
             this.chk_OnTheRoute.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -319,14 +329,14 @@
             this.calculate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_AddBus2});
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(180, 22);
+            this.calculate.Size = new System.Drawing.Size(135, 22);
             this.calculate.Text = "Вычислить";
             // 
             // btn_AddBus2
             // 
             this.btn_AddBus2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_AddBus2.Name = "btn_AddBus2";
-            this.btn_AddBus2.Size = new System.Drawing.Size(180, 22);
+            this.btn_AddBus2.Size = new System.Drawing.Size(175, 22);
             this.btn_AddBus2.Text = "Добавить автобус!";
             this.btn_AddBus2.Click += new System.EventHandler(this.btn_AddBus2_Click);
             // 
@@ -334,7 +344,7 @@
             // 
             this.btn_Clear.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(180, 22);
+            this.btn_Clear.Size = new System.Drawing.Size(135, 22);
             this.btn_Clear.Text = "Очистить";
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
@@ -342,7 +352,7 @@
             // 
             this.btn_Close2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Close2.Name = "btn_Close2";
-            this.btn_Close2.Size = new System.Drawing.Size(180, 22);
+            this.btn_Close2.Size = new System.Drawing.Size(135, 22);
             this.btn_Close2.Text = "Выход";
             this.btn_Close2.Click += new System.EventHandler(this.btn_Close2_Click);
             // 
@@ -358,24 +368,16 @@
             // 
             this.aboutTheProgram.BackColor = System.Drawing.Color.WhiteSmoke;
             this.aboutTheProgram.Name = "aboutTheProgram";
-            this.aboutTheProgram.Size = new System.Drawing.Size(180, 22);
+            this.aboutTheProgram.Size = new System.Drawing.Size(149, 22);
             this.aboutTheProgram.Text = "О программе";
             this.aboutTheProgram.Click += new System.EventHandler(this.aboutTheProgram_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 237);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
             // 
             // Buses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(685, 581);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.меню);
@@ -389,11 +391,11 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.меню.ResumeLayout(false);
             this.меню.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

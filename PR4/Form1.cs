@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +14,7 @@ namespace PR4
 {
     public partial class Buses : Form
     {
-        List<Bus> bus = new List<Bus>();
+        List<Bus<int, string, bool>> bus = new List<Bus<int, string, bool>>();
         ErrorProvider errorProvider = new ErrorProvider();
         public Buses()
         {
@@ -25,18 +27,24 @@ namespace PR4
                 !string.IsNullOrEmpty(txt_RouteNumber.Text))
             {
                 bool onTheRoute = chk_OnTheRoute.Checked;
-                Bus newBus = new Bus(busNumber, txt_DriverNameAndSurname.Text, txt_RouteNumber.Text, onTheRoute);
+                Bus<int, string, bool> newBus = new Bus<int, string, bool>(busNumber, txt_DriverNameAndSurname.Text, txt_RouteNumber.Text, onTheRoute);
                 bus.Add(newBus);
                 UpdateBusInformation();
             }
-            else
+            else if (String.IsNullOrWhiteSpace(txt_BusNumber.Text))
             {
                 errorProvider.SetError(txt_BusNumber, "Пожалуйста, введите корректные значения для номера автобуса.");
                 await Task.Delay(2000);
                 errorProvider.SetError(txt_BusNumber, "");
+            }
+            if (String.IsNullOrWhiteSpace(txt_DriverNameAndSurname.Text))
+            {
                 errorProvider.SetError(txt_DriverNameAndSurname, "Пожалуйста, введите корректные значения для имени водителя.");
                 await Task.Delay(2000);
                 errorProvider.SetError(txt_DriverNameAndSurname, "");
+            }
+            if (String.IsNullOrWhiteSpace(txt_RouteNumber.Text))
+            {
                 errorProvider.SetError(txt_RouteNumber, "Пожалуйста, введите корректные значения для номера маршрута.");
                 await Task.Delay(2000);
                 errorProvider.SetError(txt_RouteNumber, "");
@@ -45,7 +53,7 @@ namespace PR4
         private void UpdateBusInformation()
         {
             buses_TextBox.Clear();
-            foreach (Bus b in bus)
+            foreach (Bus<int, string, bool> b in bus)
             {
                 string status = b.OnTheRoute ? "На маршруте" : "В парке";
                 string busInfo = $"Номер автобуса: {b.BusNumber}\r\nВодитель: {b.DriverNameAndSurname}\r\nМаршрут: {b.RouteNumber}\r\nСтатус: {status}\r\n";
@@ -55,8 +63,8 @@ namespace PR4
         private void btn_InThePark_Click(object sender, EventArgs e)
         {
             txt_SearchBuses.Clear();
-            List<Bus> parkedBuses = bus.Where(b => !b.OnTheRoute).ToList();
-            foreach (Bus b in parkedBuses)
+            List<Bus<int, string, bool>> parkedBuses = bus.Where(b => !b.OnTheRoute).ToList();
+            foreach (Bus<int, string, bool> b in parkedBuses)
             {
                 string busInfo = $"Номер автобуса: {b.BusNumber}\r\nВодитель: {b.DriverNameAndSurname}\r\nМаршрут: {b.RouteNumber}\r\nСтатус: В парке";
                 txt_SearchBuses.AppendText(busInfo + "\r\n\r\n");
@@ -65,8 +73,8 @@ namespace PR4
         private void btn_OnTheRoute_Click(object sender, EventArgs e)
         {
             txt_SearchBuses.Clear();
-            List<Bus> busesOnRoute = bus.Where(b => b.OnTheRoute).ToList();
-            foreach (Bus b in busesOnRoute)
+            List<Bus<int, string, bool>> busesOnRoute = bus.Where(b => b.OnTheRoute).ToList();
+            foreach (Bus<int, string, bool> b in busesOnRoute)
             {
                 string busInfo = $"Номер автобуса: {b.BusNumber}\r\nВодитель: {b.DriverNameAndSurname}\r\nМаршрут: {b.RouteNumber}\r\nСтатус: На маршруте";
                 txt_SearchBuses.AppendText(busInfo + "\r\n\r\n");
